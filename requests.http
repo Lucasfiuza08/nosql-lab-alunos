@@ -1,0 +1,28 @@
+@base = http://localhost:3000
+GET {{base}}/api/health
+
+###
+GET {{base}}/api/produtos
+
+###
+POST {{base}}/api/produtos
+Content-Type: application/json
+
+{"nome":"Cabo HDMI","preco":35,"categoria":"Acessórios","estoque":20}
+
+###
+POST http://localhost:3000/api/vendas
+Content-Type: application/json
+
+{
+  "cliente": "Lucas",
+  "itens": [
+    { "produto": "COLE_UM_ID_AQUI", "quantidade": 2, "precoUnitario": 0.01 }
+  ]
+}
+
+###
+GET http://localhost:3000/api/vendas
+
+###
+GET http://localhost:3000/api/relatorios/vendas
